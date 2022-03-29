@@ -19,7 +19,7 @@ $(document).ready(function() {
   
   setInterval(function() {
     getSpreadsheetData();
-  }, 20000);
+  }, 200000);
 
   
   function getSpreadsheetData() {
@@ -42,7 +42,7 @@ $(document).ready(function() {
       names += ``;
       $(entry).each(function(index) {
         if(index > 0){
-          names += `<li class="person" data-position="${this[3]}">
+          names += `<li class="person ${(this[5])}" data-position="${this[3]}">
           <div class="rank"></div>
           <div class="name">${this[0]} ${this[1]}</div>
           <div class="score">${this[3]}</div>
@@ -54,6 +54,9 @@ $(document).ready(function() {
             
       setTimeout(function () {  
 
+        /* Removed flagged items */
+        $(".person.flagged").remove();
+        
         /* Reorders list based on score */
         $(".leaderboard-table").each(function(){
           $(this).html($(this).children('li').sort(function(a, b){
