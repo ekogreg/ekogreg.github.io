@@ -16,7 +16,7 @@ $(document).ready(function() {
   getSpreadsheetData();
   setInterval(function() {
     getSpreadsheetData();
-  }, 200000);
+  }, 20000);
 
   function getSpreadsheetData() {
     // Spreadsheet URL: https://docs.google.com/spreadsheets/d/18BqLsBCJ38B3rNQG93gIyShhaSXyuI1Vobbel-tZzj0
