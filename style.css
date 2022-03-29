@@ -83,7 +83,7 @@ li {
 }
 
 .rank {
-  width: 150px;
+  width: 200px;
 }
 
 .name {
@@ -93,15 +93,17 @@ li {
   text-overflow: ellipsis;
 }
 
-.score {
-  width: 200px;
+#heading .score,
+#top-3 .score {
+  text-align: right;
+  padding-right: 40px;
 }
 
-.person:nth-of-type(even) {
+#top-3 .person:nth-of-type(even) {
   background: #f5f8fa;
 }
 
-.person:last-of-type {
+#top-3 .person:last-of-type {
   border-radius: 0 0 20px 20px;
 }
 
@@ -115,14 +117,6 @@ li {
 
 #top-3 { }
 
-#top-50 {
-  margin-top: 2em;
-}
-
-#top-50 ul {
-  border-radius: 15px;
-}
-
 #top-3 .rank {
   font-size: 140%;
 }
@@ -133,6 +127,72 @@ li {
   font-size: 200%;
 }
 
-#top-50 .person:first-of-type {
-  border-radius: 20px 20px 0 0;
+#top-50 {
+  background: #fff;
+  margin-top: 2em;
+  padding: 1em .5em;
+  border-radius: 20px;
 }
+
+#top-50 ul {
+  border-radius: 15px;
+  padding: 0 .5em;
+}
+
+#top-50 .sub-list {
+  width: 25%;
+  display: inline-block;
+}
+
+@media screen and (max-width: 768px) {
+  
+  #top-50 .sub-list {
+    width: 50%;
+    display: inline-block;
+    margin-bottom: 1em;
+  } 
+  
+}
+
+@media screen and (max-width: 468px) {
+  
+  #top-50 .sub-list {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 0;
+  } 
+  
+  #top-50 .person:first-of-type {
+    padding-top: 0;
+  }
+  
+  #top-50 .person:last-of-type {
+    padding-bottom: 0;
+  }  
+  
+}
+
+#top-50 .rank,
+#top-50 .name,
+#top-50 .score {
+  padding: .25em;
+}
+
+#top-50 .rank,
+#top-50 .score {
+  width: auto;
+  padding: .25 .5em;
+}
+
+#top-50 .rank {
+  min-width: 40px;
+}
+
+#top-50 .person {
+  background: transparent;
+  color: #4c718b;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 0 1em;
+}
+

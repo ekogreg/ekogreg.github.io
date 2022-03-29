@@ -65,7 +65,7 @@ $(document).ready(function() {
           (el, i) => el.innerHTML = (i + 1)
         )  
         
-        /* Breaks list into multiple sections */
+        /* Breaks list into two sections */
         var UL = $('#leaderboard ul'),
           topThree = UL.find('li:gt(2)'),
           topFifty = $('<div>').attr('id', 'top-3');
@@ -75,8 +75,39 @@ $(document).ready(function() {
         }
         topFifty.append(UL);
         
-        /* Only show Top 50 results  */
-        $("#leaderboard li:gt(9)").remove();
+        /* Breaks bottom list into multiple columns */
+        $(function($) {
+          var num_cols = 4,
+            container = $('#top-50'),
+            listItem = 'li',
+            listClass = 'sub-list';
+          container.each(function() {
+            var items_per_col = new Array(),
+              items = $(this).find(listItem),
+              min_items_per_col = Math.floor(items.length / num_cols),
+              difference = items.length - (min_items_per_col * num_cols);
+            for (var i = 0; i < num_cols; i++) {
+              if (i < difference) {
+                items_per_col[i] = min_items_per_col + 1;
+              } else {
+                items_per_col[i] = min_items_per_col;
+              }
+            }
+            for (var i = 0; i < num_cols; i++) {
+              $(this).append($('<ul ></ul>').addClass(listClass));
+              for (var j = 0; j < items_per_col[i]; j++) {
+                var pointer = 0;
+                for (var k = 0; k < i; k++) {
+                  pointer += items_per_col[k];
+                }
+                $(this).find('.' + listClass).last().append(items[j + pointer]);
+              }
+            }
+          });
+        });
+       
+        /* Only show Top X results  */
+        $("#leaderboard li:gt(30)").remove();
 
         /* Adds medals to Top 3 */
         $("#top-3 li:nth-of-type(1) .rank").html('🥇');
