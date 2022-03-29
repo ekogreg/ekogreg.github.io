@@ -54,9 +54,15 @@ li {
   padding: 0 2em;
 }
 
+#heading {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 #leaderboard {
+  max-width: 1500px;
   color: #000;
-  margin-bottom: 2em;
+  margin: 0 auto 2em auto;
 }
 
 #heading ul {
