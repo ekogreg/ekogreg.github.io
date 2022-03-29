@@ -42,10 +42,10 @@ $(document).ready(function() {
       names += ``;
       $(entry).each(function(index) {
         if(index > 0){
-          names += `<li class="person" data-position="${this[2]}">
+          names += `<li class="person" data-position="${this[3]}">
           <div class="rank"></div>
-          <div class="name">${this[0]}</div>
-          <div class="score">${this[2]}</div>
+          <div class="name">${this[0]} ${this[1]}</div>
+          <div class="score">${this[3]}</div>
           </li>`; 
         }
       });
@@ -73,7 +73,10 @@ $(document).ready(function() {
         if (topThree.length) {
           topFifty.after($('<div>').attr('id', 'top-50').append($('<ul>').append(topThree)));
         }
-        topFifty.append(UL);      
+        topFifty.append(UL);
+        
+        /* Only show Top 50 results  */
+        $("#leaderboard li:gt(9)").remove();
 
         /* Adds medals to Top 3 */
         $("#top-3 li:nth-of-type(1) .rank").html('🥇');
