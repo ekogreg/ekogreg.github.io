@@ -13,60 +13,50 @@
   
 */
 $(document).ready(function() {
-  
-  
   getSpreadsheetData();
-  
   setInterval(function() {
     getSpreadsheetData();
   }, 200000);
 
-  
   function getSpreadsheetData() {
-
     // Spreadsheet URL: https://docs.google.com/spreadsheets/d/18BqLsBCJ38B3rNQG93gIyShhaSXyuI1Vobbel-tZzj0
-
     /* sheetID: Pull this from Google Sheet */
     var sheetID = "18BqLsBCJ38B3rNQG93gIyShhaSXyuI1Vobbel-tZzj0";
     var tab_name = "Sheet1";
     var apiKey = "AIzaSyDYmEIzm5sd4eLssm6GOzB5LTmh7A8XGdw";
-    var sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/"+ sheetID +"/values/"+tab_name+"?alt=json&key=" + apiKey;  
+    var sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetID + "/values/" + tab_name + "?alt=json&key=" + apiKey;
     var entry;
     console.log(sheetUrl);
     $.getJSON(sheetUrl, function(data) {
       console.log(data);
       entry = data.values;
-
       var names = "";
       names += `<ul class="leaderboard-table">`;
       names += ``;
       $(entry).each(function(index) {
-        if(index > 0){
+        if (index > 0) {
           names += `<li class="person ${(this[5])}" data-position="${this[3]}">
           <div class="rank"></div>
           <div class="name">${this[0]} ${this[1]}</div>
           <div class="score">${this[3]}</div>
-          </li>`; 
+          </li>`;
         }
       });
       names += `</ul>`;
       console.log("Loading the data");
-            
-      setTimeout(function () {  
-
+      setTimeout(function() {
+        
         /* Removed flagged items */
         $(".person.flagged").remove();
         
         /* Reorders list based on score */
-        $(".leaderboard-table").each(function(){
-          $(this).html($(this).children('li').sort(function(a, b){
+        $(".leaderboard-table").each(function() {
+          $(this).html($(this).children('li').sort(function(a, b) {
             return ($(b).data('position')) > ($(a).data('position')) ? 1 : -1;
           }));
         });
-        
         document.querySelectorAll("#leaderboard .rank").forEach(
-          (el, i) => el.innerHTML = (i + 1)
-        )  
+          (el, i) => el.innerHTML = (i + 1))
         
         /* Breaks list into two sections */
         var UL = $('#leaderboard ul'),
@@ -108,24 +98,21 @@ $(document).ready(function() {
             }
           });
         });
-       
+        
         /* Only show Top X results  */
         $("#leaderboard li:gt(30)").remove();
-
+        
         /* Adds medals to Top 3 */
         $("#top-3 li:nth-of-type(1) .rank").html('🥇');
         $("#top-3 li:nth-of-type(2) .rank").html('🥈');
         $("#top-3 li:nth-of-type(3) .rank").html('🥉');
-          
         console.log("Sorting the data");
-      }, 0);      
+      }, 0);
       
+      /* Displays it all */
       $("#leaderboard").html(names);
       console.log("Displaying the data");
-      
     });
-
   }
   
-
 });
