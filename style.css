@@ -38,6 +38,11 @@ li {
   align-items: center;
 }
 
+#logo-wrap {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
 #logo {
   max-width: 100px;
   position: relative;
