@@ -22,7 +22,7 @@ $(document).ready(function() {
     // Spreadsheet URL: https://docs.google.com/spreadsheets/d/18BqLsBCJ38B3rNQG93gIyShhaSXyuI1Vobbel-tZzj0
     /* sheetID: Pull this from Google Sheet */
     var sheetID = "18BqLsBCJ38B3rNQG93gIyShhaSXyuI1Vobbel-tZzj0";
-    var tab_name = "Sheet1";
+    var tab_name = "DO NOT CHANGE THIS SHEET NAME";
     var apiKey = "AIzaSyDYmEIzm5sd4eLssm6GOzB5LTmh7A8XGdw";
     var sheetUrl = "https://sheets.googleapis.com/v4/spreadsheets/" + sheetID + "/values/" + tab_name + "?alt=json&key=" + apiKey;
     var entry;
