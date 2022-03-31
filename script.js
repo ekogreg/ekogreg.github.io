@@ -35,7 +35,7 @@ $(document).ready(function() {
       names += ``;
       $(entry).each(function(index) {
         if (index > 0) {
-          names += `<li class="person ${(this[5])}" data-position="${this[3]}">
+          names += `<li class="person" data-flag="${(this[5])}" data-position="${this[3]}">
           <div class="rank"></div>
           <div class="name">${this[0]} ${this[1]}</div>
           <div class="score">${this[3]}</div>
@@ -47,7 +47,7 @@ $(document).ready(function() {
       setTimeout(function() {
         
         /* Removed flagged items */
-        $(".person.flagged").remove();
+        $(".person[data-flag='1']").remove();
         
         /* Reorders list based on score */
         $(".leaderboard-table").each(function() {
