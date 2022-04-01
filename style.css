@@ -1,8 +1,49 @@
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d22df97a04b9bdc44d_AeonikPro-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d252adc4ccb9234985_AeonikPro-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d298090b0fdd05db43_AeonikPro-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d298090b0fdd05db43_AeonikPro-Medium.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Aeonik Pro';
+  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d298090b0fdd05db43_AeonikPro-Medium.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
   background: #091a27;
   color: #fff;
-  font-family: lato;
+  font-family: 'Aeonik Pro';
+  font-weight: 400;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -12,6 +53,7 @@ body {
 
 h1 {
   font-size: 2.5em;
+  font-weight: 600;
   line-height: 1.2em;
   text-align: center;
   margin: 0;
@@ -20,6 +62,7 @@ h1 {
 
 h2 {
   font-size: 1.5em;
+  font-weight: 600;
   line-height: 1.3em;
   text-align: center;
   margin: 0;
@@ -28,6 +71,7 @@ h2 {
 
 h3 {
   font-size: 1.2em;
+  font-weight: 600;
   line-height: 1.5em;
   text-align: center;
   margin: .25em 0 2em 0;
@@ -109,7 +153,6 @@ li {
   background: #2e526b;
   color: #fff;
   font-size: 100%;
-  font-weight: 600;
   line-height: 32px;
   border-radius: 20px 20px 0 0;
 }
@@ -118,7 +161,6 @@ li {
   width: 100%;
   background: #f9f9fa;
   font-size: 1.125em;
-  font-weight: 700;
   line-height: 1.5em;
   text-align: left;
 }
@@ -151,6 +193,10 @@ li {
 #top-3 .score {
   text-align: right;
   padding-right: 40px;
+}
+
+#top-3 .score {
+  font-weight: 500;
 }
 
 #top-3 .person:nth-of-type(even) {
