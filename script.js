@@ -100,7 +100,7 @@ $(document).ready(function() {
         });
         
         /* Only show Top X results  */
-        $("#leaderboard li:gt(30)").remove();
+        $("#leaderboard li:gt(50)").remove();
         
         /* Adds medals to Top 3 */
         $("#top-3 li:nth-of-type(1) .rank").html('🥇');
