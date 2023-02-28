@@ -100,7 +100,7 @@ $(document).ready(function() {
         });
         
         /* Only show Top X results  */
-        $("#leaderboard li:gt(50)").remove();
+        $("#leaderboard li:gt(30)").remove();
         
         /* Adds medals to Top 3 */
         $("#top-3 li:nth-of-type(1) .rank").html('🥇');
@@ -116,3 +116,14 @@ $(document).ready(function() {
   }
   
 });
+
+// Hide all items except the first one
+$('.item:not(:first)').hide();
+
+// Set an interval to switch items every 15 seconds
+setInterval(function() {
+  var current = $('.item:visible');
+  var next = current.next('.item').length ? current.next('.item') : $('.item:first');
+  current.fadeOut(500);
+  next.fadeIn(500);
+}, 30000);

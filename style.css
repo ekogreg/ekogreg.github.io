@@ -1,48 +1,20 @@
 @font-face {
-  font-family: 'Aeonik Pro';
-  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d22df97a04b9bdc44d_AeonikPro-Light.otf') format('opentype');
+  font-family: 'Harmonia';
+  src: url("{{'HarmoniaSans-Regular.otf' | asset_url}}") format("opentype");
   font-weight: 300;
-  font-style: normal;
-  font-display: swap;
 }
-
 @font-face {
-  font-family: 'Aeonik Pro';
-  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d252adc4ccb9234985_AeonikPro-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Pro';
-  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d298090b0fdd05db43_AeonikPro-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Pro';
-  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d298090b0fdd05db43_AeonikPro-Medium.otf') format('opentype');
+  font-family: 'Harmonia';
+  src: url("{{'HarmoniaSans-Bold.otf' | asset_url}}") format("opentype");
   font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Aeonik Pro';
-  src: url('https://assets.website-files.com/5fca50c07c4b1314fe246a86/5fca52d298090b0fdd05db43_AeonikPro-Medium.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
 }
 
 html,
 body {
-  background: #091a27;
+  background: url('https://cdn.shopify.com/s/files/1/0715/6111/files/acc-bg.jpg?v=1676575676') no-repeat center center fixed;
+  background-size: cover;
   color: #fff;
-  font-family: 'Aeonik Pro';
+  font-family: 'Harmonia', sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
@@ -87,7 +59,7 @@ p {
 }
 
 a {
-  color: #2096eb;
+  color: #04865f;
 }
 
 ul, li { margin: 0; padding: 0; list-style-type: none; }
@@ -150,7 +122,7 @@ li {
 }
 
 #heading ul {
-  background: #2e526b;
+  background: #00573d;
   color: #fff;
   font-size: 100%;
   line-height: 32px;
@@ -288,9 +260,26 @@ li {
 
 #top-50 .person {
   background: transparent;
-  color: #4c718b;
+  color: #00573d;
   font-size: .9em;
-  line-height: 1.5em;
+  line-height: 1.6em;
   padding: 0 1em;
 }
 
+.wrap {
+
+}
+
+.item.image {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 2em;
+}
+.item.image img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+}
